@@ -66,11 +66,7 @@ const MarketsSection = styled.section``
 const MarketCards = styled.div`
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-
-  @media ${QUERIES.laptopAndUp} {
-    gap: 16px;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 `
 
 const SportsSection = styled.section`
