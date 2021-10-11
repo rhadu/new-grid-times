@@ -1,8 +1,15 @@
-import React from 'react';
-import styled from 'styled-components/macro';
-import { COLORS } from '../../constants';
+import React from 'react'
+import styled from 'styled-components/macro'
+import { COLORS, QUERIES } from '../../constants'
 
-const SecondaryStory = ({ id, title, image, location, abstract, className }) => {
+const SecondaryStory = ({
+  id,
+  title,
+  image,
+  location,
+  abstract,
+  className,
+}) => {
   return (
     <a href={`/story/${id}`}>
       <Wrapper className={className}>
@@ -11,8 +18,8 @@ const SecondaryStory = ({ id, title, image, location, abstract, className }) => 
         <Abstract>{abstract}</Abstract>
       </Wrapper>
     </a>
-  );
-};
+  )
+}
 
 const Wrapper = styled.article`
   display: grid;
@@ -22,8 +29,18 @@ const Wrapper = styled.article`
   gap: 4px 16px;
   grid-template-columns: 120px 1fr;
   color: var(--color-gray-900);
-  align-items:start;
-`;
+  align-items: start;
+
+  @media ${QUERIES.tabletOnly} {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'image'
+      'heading'
+      'abstract';
+  }
+
+  
+`
 
 const Image = styled.img`
   grid-area: image;
@@ -32,7 +49,7 @@ const Image = styled.img`
   height: 120px;
   border-radius: 4px;
   object-fit: cover;
-`;
+`
 
 const Heading = styled.h2`
   grid-area: heading;
@@ -41,7 +58,7 @@ const Heading = styled.h2`
   line-height: 1.3;
   /* Optical alignment */
   margin-top: -2px;
-`;
+`
 
 const Abstract = styled.p`
   grid-area: abstract;
@@ -51,6 +68,6 @@ const Abstract = styled.p`
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
-`;
+`
 
-export default SecondaryStory;
+export default SecondaryStory

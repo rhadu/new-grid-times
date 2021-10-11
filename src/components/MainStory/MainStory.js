@@ -32,6 +32,8 @@ const Image = styled.img`
   display: block;
   width: 100%;
   margin-bottom: 12px;
+  max-height: 320px;
+  object-fit: cover;
 `;
 
 const Heading = styled.h2`
@@ -54,7 +56,7 @@ const Abstract = styled.p`
     -webkit-line-clamp: 16;
   }
   
-  @media ${QUERIES.desktopAndUp}{
+  @media ${QUERIES.laptopAndUp}{
     -webkit-line-clamp: 10;
   }
 `;

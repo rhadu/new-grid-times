@@ -88,6 +88,10 @@ const MobileHeader = styled(MaxWidthWrapper)`
   justify-content: center;
   margin-top: 32px;
   margin-bottom: 48px;
+  @media ${QUERIES.tabletAndUp} {
+    margin-top: 48px;
+    margin-bottom: 72px;
+  }
   @media ${QUERIES.desktopAndUp} {
     display: none;
   }
@@ -99,8 +103,8 @@ const DesktopHeader = styled(MaxWidthWrapper)`
   @media ${QUERIES.desktopAndUp} {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    align-items:center;
-    margin-bottom: 72px;
+    align-items: center;
+    margin-bottom: 80px;
   }
 `
 
