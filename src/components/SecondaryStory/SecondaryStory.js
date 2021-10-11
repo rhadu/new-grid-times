@@ -4,13 +4,13 @@ import { COLORS } from '../../constants';
 
 const SecondaryStory = ({ id, title, image, location, abstract, className }) => {
   return (
-    <Link href={`/story/${id}`}>
+    <a href={`/story/${id}`}>
       <Wrapper className={className}>
         <Image alt={image.alt} src={image.src} />
         <Heading>{title}</Heading>
         <Abstract>{abstract}</Abstract>
       </Wrapper>
-    </Link>
+    </a>
   );
 };
 
@@ -22,17 +22,8 @@ const Wrapper = styled.article`
   gap: 4px 16px;
   grid-template-columns: 120px 1fr;
   color: var(--color-gray-900);
+  align-items:start;
 `;
-
-const Link = styled.a`
-  &:not(:first-of-type){
-    padding-top: 16px;
-  }
-  &:not(:last-of-type){
-    padding-bottom: 16px;
-    border-bottom: 1px solid ${COLORS.gray[300]};
-  }
-`
 
 const Image = styled.img`
   grid-area: image;
